@@ -1,11 +1,10 @@
-````markdown
 # Molha.me - Sistema IoT Simplificado
 
 Sistema IoT simples para monitoramento automático de plantas com regras locais no ESP32 e dashboard web.
 
 ---
 
-## 📦 Instalação e Uso
+## Instalação e Uso
 
 ### **Pré-requisitos**
 - [Node.js](https://nodejs.org) (versão LTS recomendada)
@@ -162,3 +161,4 @@ molha-me/
 ````
 
 ---
+
