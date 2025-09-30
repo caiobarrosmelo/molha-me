@@ -1,19 +1,32 @@
-**Sistema simples, eficiente e confiável para monitoramento IoT de plantas!**
-
-
 ````markdown
 # Molha.me - Sistema IoT Simplificado
 
 Sistema IoT simples para monitoramento automático de plantas com regras locais no ESP32 e dashboard web.
 
-## Instalação e Uso
+---
+
+## 📦 Instalação e Uso
+
+### **Pré-requisitos**
+- [Node.js](https://nodejs.org) (versão LTS recomendada)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- ESP32 devidamente configurado
 
 ### **1. Instalar Dependências**
-- Certifique-se de que o Node.js está instalado antes de rodar este comando.
-Dentro da pasta raiz do projeto (`molha-me`), execute:
+> Certifique-se de que o Node.js está instalado antes de rodar este comando.  
+> Dentro da pasta raiz do projeto (`molha-me`), execute:
+
+```bash
+npm install express cors
+````
+
+> Se já existir um `package.json` com dependências listadas, você pode usar apenas:
+
 ```bash
 npm install
-````
+```
+
+---
 
 ### **2. Configurar ESP32**
 
@@ -28,6 +41,8 @@ const char* password = "SUA_SENHA_AQUI";
 const char* serverUrl = "http://SEU_IP:3000";
 ```
 
+---
+
 ### **3. Iniciar Sistema**
 
 ```bash
@@ -40,19 +55,21 @@ node api_simples.js
 # Ou acesse: http://localhost:3000
 ```
 
+---
+
 ## Como Funciona
 
 ### **Regras Locais (ESP32)**
 
-* **Temperatura > 30°C** → Acionar LED/relé
-* **Umidade < 40%** → Acionar LED/relé
-* **Luminosidade < 200 lux** → Acionar LED/relé
-* **Distância fora do range** → Acionar LED/relé
+* **Temperatura > 30°C** → Aciona LED/relé
+* **Umidade < 40%** → Aciona LED/relé
+* **Luminosidade < 200 lux** → Aciona LED/relé
+* **Distância fora do range** → Aciona LED/relé
 
 ### **Integração API**
 
-* ESP32 envia dados dos sensores (POST)
-* ESP32 busca thresholds atualizados (GET)
+* ESP32 envia dados dos sensores (`POST`)
+* ESP32 busca thresholds atualizados (`GET`)
 * Dashboard mostra dados em tempo real
 
 ### **Fail-safe**
@@ -61,6 +78,8 @@ node api_simples.js
 * Sistema continua funcionando offline
 * Reconexão automática
 
+---
+
 ## Dashboard
 
 * **Visualização**: dados dos sensores em tempo real
@@ -68,7 +87,9 @@ node api_simples.js
 * **Histórico**: últimos 10 registros
 * **Status**: Online/Offline do ESP32
 
-## Configuração dos Sensores
+---
+
+## 🔌 Configuração dos Sensores
 
 ### **Pinos ESP32**
 
@@ -91,25 +112,33 @@ distancia_min = 5.0 cm
 distancia_max = 50.0 cm
 ```
 
-## Solução de Problemas
+---
+
+## 🛠 Solução de Problemas
 
 ### **ESP32 não conecta**
 
 * Verifique SSID e senha WiFi
 * Confirme IP da API
-* Teste: `ping IP_DA_API`
+* Teste conexão: `ping IP_DA_API`
 
 ### **API não responde**
 
 * Verifique se Node.js está instalado
-* Confirme se porta 3000 está livre
-* Teste: `curl http://localhost:3000/api/get-thresholds`
+* Confirme se a porta `3000` está livre
+* Teste via terminal:
+
+```bash
+curl http://localhost:3000/api/get-thresholds
+```
 
 ### **Dashboard não carrega**
 
-* Abra console do navegador (F12)
-* Verifique erros de CORS
-* Confirme se API está rodando
+* Abra o console do navegador (F12)
+* Verifique erros de **CORS**
+* Confirme se a API está rodando
+
+---
 
 ## Estrutura do Projeto
 
@@ -118,12 +147,18 @@ molha-me/
 ├── molha-me/
 │   ├── main/
 │   │   └── main.ino         # Código ESP32
-│   ├── api_simples.js       # API REST
+│   ├── api_simples.js       # API REST Node.js
 │   ├── dashboard.html       # Dashboard web
 │   ├── molha_me_db.sql      # Script do banco
 │   └── README.md            # Esta documentação
-├── package.json             # Dependências
+├── package.json             # Dependências do Node
 └── package-lock.json
 ```
+
 ---
 
+**Sistema simples, eficiente e confiável para monitoramento IoT de plantas!**
+
+````
+
+---
