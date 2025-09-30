@@ -106,14 +106,7 @@ molha-me/
 └── README.md           # Esta documentação
 ```
 
-## Próximos Passos
-
-- [ ] Implementar sensores reais (DHT22, LDR, HC-SR04)
-- [ ] Adicionar mais tipos de sensores
-- [ ] Implementar alertas (email, SMS)
-- [ ] Criar relatórios
-- [ ] Adicionar autenticação
-
 ---
+
 
 **Sistema simples, eficiente e confiável para monitoramento IoT de plantas!**
